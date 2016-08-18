@@ -11,15 +11,34 @@
   <!--
     ng-model-options="{updateOn: 'blur'}"-->
 </div>
+
 <br>
-<span>{{$ctrl.initialPercent1}}</span>
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-  <span class="input-group-addon" id="basic-addon2">@example.com</span>
-</div>
-<br>
+<span>{{$ctrl.initialPercent}}</span>
 <div class="input-group">
   <span class="input-group-addon">$</span>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <span class="input-group-addon">.00</span>
+  <input
+    type="text"
+    placeholder="amount"
+    class="form-control"
+    aria-label="Amount (to the nearest dollar)"
+    ng-model="$ctrl.initialAmount"
+    ng-change="$ctrl.addPrefix($ctrl.initialAmount)"
+  >
+  <span class="input-group-addon">{{$ctrl.initAmount1}}</span>
+</div>
+
+<br>
+<div class="input-group">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="userEmail"
+    ng-model="$ctrl.mail"
+    ng-change="$ctrl.addSuffix($ctrl.mail)"
+    aria-describedby="basic-addon2">
+  <!--<span class="input-group-addon" id="basic-addon2">@example.com</span>-->
+  <br>
+  <!--<select class="form-control">
+    <option  ng-repeat="d in $ctrl.mailArr">{{d}}</option>
+  </select>-->
 </div>
