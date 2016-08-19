@@ -8,7 +8,8 @@
 </head>
 <body ng-controller="IndexController">
   <h1 class="caption">index</h1>
-  <div class="row">
+  <email-input></email-input>
+  <!--<div class="row">
     <div class="col-md-6 col-sm-6">
       <percent-input></percent-input>
       <label>integer:</label>
@@ -33,14 +34,15 @@
       <input class="form-control" input-format="email"/>
 
       <label>phone:</label>
-      <input class="form-control" input-format="phone"/>
+      <input
+        class="form-control"
+        input-format="phone"
+        ng-model="inputPhone"
+        ng-change="handlePhone(inputPhone)"
+      />{{inputPhone}}
 
       <br>
-      <h1>自定义指令</h1>
-      <input-format input-format="" ng-model="test"></input-format>
-      <h1>默认指令</h1>
-      <input ng-model="test">second
     </div>
-  </div>
+  </div>-->
 <script type="text/javascript" src="ng-input.js"></script><script type="text/javascript" src="ng-input.js"></script></body>
 </html>

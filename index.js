@@ -5,11 +5,15 @@
 const MODULE_NAME = 'ng-input';
 import angular from 'angular';
 import { PercentInputComponent } from './src/percent-input';
+import { EmailInputDirective } from './src/email-input';
 import { InputFormat } from './src/input-format';
+import { InputFormat2 } from './src/input-format2';
 
 angular.module(MODULE_NAME, [])
   .component('percentInput', PercentInputComponent)
   .directive('input-format', InputFormat)
+  .directive('input-format2', InputFormat2)
+  .directive('emailInput', EmailInputDirective)
   .controller('IndexController', function($scope){
     'ngInject';
     let $ctrl = this;
