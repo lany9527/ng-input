@@ -36,9 +36,6 @@ let PercentInputComponent = {
         //在最末尾插入%
         $ctrl.initialPercent1 = $ctrl.initialPercent.substring(0,ipt.length+1).concat($ctrl.percentSign);
         console.log($ctrl.initialPercent1);
-        //$ctrl.data = + $ctrl.initialPercent.substring(1,$ctrl.initialPercent.length+1);
-        //console.log($ctrl.initialPercent);
-        //console.log(typeof $ctrl.data);
       }
     }
   }
