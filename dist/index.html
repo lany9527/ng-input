@@ -6,13 +6,41 @@
   <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body ng-controller="IndexController">
   <h1 class="caption">index</h1>
   <div class="row">
-    <div class="col-md-4 col-sm-4">
+    <div class="col-md-6 col-sm-6">
       <percent-input></percent-input>
+      <label>integer:</label>
+      <input class="form-control" input-format="integer" />
+
+      <label>float:</label>
+      <input class="form-control" input-format="float" input-smart-opts="{digits:4}"/>
+
+      <label>number:</label>
+      <input class="form-control" input-format="number"/>
+
+      <label>percent:</label>{{inputPercent}}
+      <input
+        class="form-control"
+        ng-model="inputPercent"
+        input-format="percent"
+        on-change="$ctrl.handleInput($ctrl.inputPercent)"
+      />
     </div>
-    <div class="col-md-8 col-sm-8"></div>
+    <div class="col-md-6 col-sm-6">
+      <label>email:</label>
+      <input class="form-control" input-format="email"/>
+
+      <label>phone:</label>
+      <input class="form-control" input-format="phone"/>
+
+      <br>
+      <h1>自定义指令</h1>
+      <input-format input-format="" ng-model="test"></input-format>
+      <h1>默认指令</h1>
+      <input ng-model="test">second
+    </div>
   </div>
-<script type="text/javascript" src="ng-input.js"></script></body>
+<script type="text/javascript" src="ng-input.js"></script><script type="text/javascript" src="ng-input.js"></script></body>
 </html>

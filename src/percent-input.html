@@ -8,8 +8,6 @@
     ng-model="$ctrl.initialPercent"
     ng-change="$ctrl.modifyInput($ctrl.initialPercent)"
   >
-  <!--
-    ng-model-options="{updateOn: 'blur'}"-->
 </div>
 
 <br>
@@ -24,21 +22,7 @@
     ng-model="$ctrl.initialAmount"
     ng-change="$ctrl.addPrefix($ctrl.initialAmount)"
   >
-  <span class="input-group-addon">{{$ctrl.initAmount1}}</span>
 </div>
 
 <br>
-<div class="input-group">
-  <input
-    type="text"
-    class="form-control"
-    placeholder="userEmail"
-    ng-model="$ctrl.mail"
-    ng-change="$ctrl.addSuffix($ctrl.mail)"
-    aria-describedby="basic-addon2">
-  <!--<span class="input-group-addon" id="basic-addon2">@example.com</span>-->
-  <br>
-  <!--<select class="form-control">
-    <option  ng-repeat="d in $ctrl.mailArr">{{d}}</option>
-  </select>-->
-</div>
+

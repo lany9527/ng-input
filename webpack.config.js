@@ -8,18 +8,17 @@ var distPath = path.resolve(__dirname, 'dist');
 
 
 module.exports = {
-  entry: [
-    path.join(__dirname, 'index.js'),
-  ],
+  entry: {
+    //path.join(__dirname, 'index.js'),
+    common: ['jquery', 'bootstrap'],
+    index: [
+      path.join(__dirname, 'index.js')
+    ]
+},
   output: {
     path: distPath,
     filename: 'ng-input.js'
   },
-  /*devServer: {
-    port: 9000,
-    contentBase: './dist',
-    historyApiFallback: true,
-  },*/
   //防止打包文件过大
   externals: {
     'angular' : 'angular'
@@ -42,7 +41,11 @@ module.exports = {
              'transform-runtime'
           ]
         }
-      }
+      },
+      {
+        test: path.join(__dirname, '/libs/jq/jquery-3.1.0.min'),
+        loader: 'expose?jQuery'
+      },
     ]
   },
   plugins: [
@@ -53,6 +56,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
       inject: 'body'
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     }),
   ]
 };
