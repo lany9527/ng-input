@@ -9,12 +9,17 @@ var distPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
   entry: [
-    path.join(__dirname, 'index.js')
+    path.join(__dirname, 'index.js'),
   ],
   output: {
     path: distPath,
     filename: 'ng-input.js'
   },
+  /*devServer: {
+    port: 9000,
+    contentBase: './dist',
+    historyApiFallback: true,
+  },*/
   //防止打包文件过大
   externals: {
     'angular' : 'angular'
